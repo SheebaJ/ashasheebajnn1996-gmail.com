@@ -31,4 +31,11 @@ class PortfoliiosController < ApplicationController
   def show
     @portfolio_item = Portfoliio.find(params[:id])
   end
+  def destroy
+    @portfolio_item = Portfoliio.find(params[:id])
+    @portfolio_item.destroy
+    respond_to do |format|
+          format.html { redirect_to portfoliios_url, notice: 'portfolio was removed.' }
+  end
+  end
 end

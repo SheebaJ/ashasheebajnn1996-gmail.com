@@ -23,6 +23,7 @@
 <td><%= image_tag p.thumb_image unless p.thumb_image.nil? %></td>
 <%# <td><%= link_to "Show", portfoliio_path(p.id) %></td> 
 <td><%= link_to "Edit", edit_portfoliio_path(p.id) %></td>
+<td><%= link_to "Delete", portfoliio_path(p),method: :delete, data:{confirm: "Are you sure ?"} %></td>
 <%# <td><a href="portfoliios/<%= p.id /edit">Edithref</a></td> %>
 </tr>
 <% end %>
