@@ -1,0 +1,15 @@
+<h1>C portfolio</h1>
+
+<%= link_to "Create New", new_portfoliio_url %><br/>
+
+<% @c_portfolio_items.each do |p| %>
+<p><%=  link_to  p.title , portfoliio_path(p.id) %></p>
+<p><%= p.subtitle %></p>
+<p><%= p.body %></p>
+<%# <%= p.main_image  %>
+<p><%= image_tag p.thumb_image unless p.thumb_image.nil? %></p>
+<%# <%= link_to "Show", portfoliio_path(p.id) %> 
+<p><%= link_to "Edit", edit_portfoliio_path(p.id) %></p>
+<p><%= link_to "Delete", portfoliio_path(p),method: :delete, data:{confirm: "Are you sure ?"} %></p>
+<%# <a href="portfoliios/<%= p.id /edit">Edithref</a> %>
+<% end %>

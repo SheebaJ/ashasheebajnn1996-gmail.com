@@ -1,6 +1,13 @@
 class PortfoliiosController < ApplicationController
   def index
       @portfolio_items = Portfoliio.all
+      # Portfoliio.c_programming
+      # Portfoliio.where(subtitle: "C programming") or check model
+  end
+
+  def c
+    @c_portfolio_items = Portfoliio.c_programming
+      # Portfoliio.where(subtitle: "C programming") or check model
   end
   def new
     @portfolio_item = Portfoliio.new
