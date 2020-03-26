@@ -13,6 +13,6 @@
 <td><%= p.subtitle %></td>
 <td><%= p.body %></td>
 <%# <td><%= p.main_image</td>  %>
-<td><%= image_tag p.thumb_image %></td>
+<td><%= image_tag p.thumb_image unless p.thumb_image.nil? %></td>
 </tr>
 <% end %>
